@@ -23,11 +23,13 @@
     <div id="mainnav">
         <ul>
             <li><a href="/baloncestoLigaWeb/adminController?adminlist=perfil"><span>Gestor de equipos</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=persona"><span>Gestor de personas</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=equip"><span>Gestor de entrenadores</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=partidos"><span>Gestor de arbitros</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=historial"><span>Gestor de partidos</span></a></li>
-            <li><a href="/baloncestoLigaWeb/BalonLigaController?list=balon"><span>Gestor de usuarios</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=GestPersona"><span>Gestor de personas</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=GestEntrenador"><span>Gestor de entrenadores</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=GestArbitro"><span>Gestor de arbitros</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=GestJugador"><span>Gestor de jugadores</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=GestPartidos"><span>Gestor de partidos</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=GestUsuarios"><span>Gestor de Usuarios</span></a></li>
+            <li><a href="/baloncestoLigaWeb/BalonLigaController?list=balon"><span>Salir</span></a></li>
         </ul>
     </div>
 </div>
