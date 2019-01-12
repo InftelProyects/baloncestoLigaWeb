@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11-ene-2019, 17:26:37
+    Author     : inftel07
+*/
+
+/* DOSSIER BACKGROUND */
+/* ----------------------------------------- */
+
+#wrapper {
+	width:100px;
+	margin:0 0px;
+	margin-top:60px;
+	margin-bottom:100px;
+}
+
+.wrapper-top {
+	width:969px;
+	height:19px;
+	margin:0 auto;
+	background-image:url(/images/btop.jpg);
+	background-repeat:no-repeat;
+}
+
+.wrapper-mid {
+	width:969px;
+	margin:0 auto;
+	background-image:url(/images/bmid.jpg);
+	background-repeat: repeat-y;
+	padding-bottom:40px;
+}
+
+.wrapper-bottom {
+	width:969px;
+	height:22px;
+	padding:0;
+	margin:0 auto;
+	background-image:url(/images/bbottom.jpg);
+	background-repeat:no-repeat;
+}
+
+/* PAPER BACKGROUND */
+/* ----------------------------------------- */
+
+#paper {
+	width:100px;
+	margin:0 0px;
+}
+
+.paper-top {
+	width:828px;
+	margin:0 auto;
+	background-image:url(images/ptop.jpg);
+	background-repeat:no-repeat;
+	height:126px;
+}
+
+#paper-mid {
+	width:828px;
+	margin:0 auto;
+	background-image:url(images/pmid.jpg);
+	background-repeat:repeat-y;
+	display:block;
+	padding:0;
+	overflow: hidden;
+	padding-bottom:75px;
+	padding-top:7px;
+}
+
+.paper-bottom {
+	width:828px;
+	height:18px;
+	margin:0 auto;
+	background-image:url(images/pbottom.jpg);
+	background-repeat:no-repeat;
+}
