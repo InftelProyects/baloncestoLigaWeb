@@ -43,10 +43,11 @@ public class EliminarArbitro extends HttpServlet {
             String id;
              
             id= request.getParameter("id");
-            //Arbitro a = arbitroFacade.find(id);
-            
-            //arbitroFacade.remove(a);
-            request.setAttribute("info", id);
+            int id2 = Integer.parseInt(id);
+            Arbitro a = arbitroFacade.find(id2);
+            arbitroFacade.remove(a);
+           
+            request.setAttribute("info", "Arbitro eliminado");
             request.getRequestDispatcher("/adminjsp/eliminado.jsp").forward(request, response);
         }
     
