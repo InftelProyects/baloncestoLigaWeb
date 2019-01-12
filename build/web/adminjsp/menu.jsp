@@ -22,12 +22,12 @@
     </div>
     <div id="mainnav">
         <ul>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=perfil"><span>-HOla</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=calendar"><span>Cashajo</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=equip"><span>Equipo</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=partidos"><span>Partidos</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=historial"><span>Historial</span></a></li>
-            <li><a href="/baloncestoLigaWeb/BalonLigaController?list=balon"><span>BalonLiga</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=perfil"><span>Gestor de equipos</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=PersonaJSP"><span>Gestor de personas</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=equip"><span>Gestor de entrenadores</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=partidos"><span>Gestor de arbitros</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=historial"><span>Gestor de partidos</span></a></li>
+            <li><a href="/baloncestoLigaWeb/BalonLigaController?list=balon"><span>Gestor de usuarios</span></a></li>
         </ul>
     </div>
 </div>

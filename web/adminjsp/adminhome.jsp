@@ -21,7 +21,7 @@
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
-                    <h2>Bienvenida Administrador</h2>
+                    <h2>Bienvenido Administrador</h2>
 
                 </div>
                 <jsp:include page="/jsp/footer.jsp" flush="true" />
