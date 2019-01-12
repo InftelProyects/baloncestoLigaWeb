@@ -21,11 +21,14 @@
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
-                    <h2>Añadir Persona</h2>
+                    <h2>${creado}</h2>
+                    <h2>Añadir Equipo</h2>
                     <form name="formcontacto" action="anadirEquipoServlet" method="post">
               <div class="form_settings">
                 <!-- Campos formulario -->
-               
+               <c:if test="${not empty info}">
+                        <h1 class="info">${info}</h1>
+                     </c:if>
                 <p><span>Nombre</span><input type="text" name="nombre" required/></p>
                 <p><span>Categoria</span><input type="text" name="categoria" required/></p>
                 <button type="submit">Añadir</button>

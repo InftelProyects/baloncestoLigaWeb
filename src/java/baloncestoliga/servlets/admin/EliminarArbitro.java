@@ -11,6 +11,7 @@ import baloncestoliga.model.facade.ArbitroFacade;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

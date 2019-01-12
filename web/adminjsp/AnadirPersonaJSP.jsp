@@ -25,7 +25,9 @@
                     <form name="formcontacto" action="anadirPersonaServlet" method="post">
               <div class="form_settings">
                 <!-- Campos formulario -->
-               
+               <c:if test="${not empty info}">
+                        <h1 class="info">${info}</h1>
+                     </c:if>
                 <p><span>Dni</span><input type="text" name="dni" required/></p>
                 <p><span>Nombre</span><input type="text" name="nombre" required/></p>
                 <p><span>Apellidos</span><input type="text" name="apellidos" required/></p>

@@ -26,7 +26,7 @@
                     <div class="form_settings">
                     <!-- Campos formulario -->
                      <c:if test="${not empty info}">
-                        <h5 class="info">${info}</h5>
+                        <h1 class="info">${info}</h1>
                      </c:if>
                     <p><span>ID</span><input type="text" name="id" required/></p>
 
