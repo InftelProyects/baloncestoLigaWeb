@@ -8,6 +8,7 @@ package baloncestoliga.model.facade;
 import baloncestoliga.model.Equipo;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 /**
@@ -27,6 +28,20 @@ public class EquipoFacade extends AbstractFacade<Equipo> {
 
     public EquipoFacade() {
         super(Equipo.class);
+    }
+    
+   public String findByNombre(String equipo_nombre){
+        String nombre = null;
+        try{
+        nombre = (String) em.createQuery("SELECT e.nombre FROM Equipo e WHERE e.nombre = ?1 ")
+                .setParameter(1, equipo_nombre)
+                .getSingleResult();
+        }catch(NoResultException e){
+            nombre=null;
+            return nombre;
+            
+        }
+        return nombre;
     }
     
 }

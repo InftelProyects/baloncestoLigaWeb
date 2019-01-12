@@ -12,10 +12,13 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -39,6 +42,8 @@ public class Equipo implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
+    @SequenceGenerator(name="seq1",sequenceName="EQUIPO_SEQ1",initialValue = 3, allocationSize = 1)
     @Id
     @Basic(optional = false)
     @NotNull
@@ -68,6 +73,8 @@ public class Equipo implements Serializable {
 
     public Equipo() {
     }
+    
+    
 
     public Equipo(BigDecimal idEquipo) {
         this.idEquipo = idEquipo;
@@ -75,6 +82,11 @@ public class Equipo implements Serializable {
 
     public Equipo(BigDecimal idEquipo, String nombre, String categoria) {
         this.idEquipo = idEquipo;
+        this.nombre = nombre;
+        this.categoria = categoria;
+    }
+    
+     public Equipo( String nombre, String categoria) {
         this.nombre = nombre;
         this.categoria = categoria;
     }
