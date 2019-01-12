@@ -25,7 +25,10 @@
                     <h3>Equipo: ${rolling.equipoIdEquipo.nombre}</h3>
                     <h2>Provincia : ${rolling.equipoIdEquipo.provincia}</h2>
                     <h2>Categoria: ${rolling.equipoIdEquipo.categoria}</h2>
-                    <h2>Entrenador: ${rolling.equipoIdEquipo.categoria}</h2>
+                    <c:forEach var="entrenador" items="${rolling.equipoIdEquipo.entrenadorCollection}">
+                          <h2>Entrenador: ${entrenador.persona.apellidos}, ${entrenador.persona.nombre}</h2>  
+                        </c:forEach>
+                           <br>
                     <h2>Integrantes del Equipo</h2>
                         <c:forEach var="jugador" items="${rolling.equipoIdEquipo.jugadorCollection}">
                           <h4>· Nombre: ${jugador.persona.apellidos}, ${jugador.persona.nombre}</h4>

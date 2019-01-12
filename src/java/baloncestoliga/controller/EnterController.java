@@ -38,9 +38,11 @@ public class EnterController extends HttpServlet {
         Usuario usuario=usuarioFacade.login(uname,psw);
         String url="";
         if (uname!= null) {
-            
+            if(usuario.getRol()=='0'){
                 url = "/userController?userid="+usuario.getIdUsuario();
-
+            } else if(usuario.getRol()=='1'){
+                url = "/adminController?adminid="+usuario.getIdUsuario();
+            }
                 
 	} else {
             url="/BalonLigaController";
