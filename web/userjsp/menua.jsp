@@ -1,6 +1,6 @@
 <%-- 
-    Document   : menu
-    Created on : 09-ene-2019, 11:41:15
+    Document   : menua
+    Created on : 12-ene-2019, 14:05:27
     Author     : inftel07
 --%>
 
@@ -24,9 +24,8 @@
         <ul>
             <li><a href="/baloncestoLigaWeb/userController?userlist=userhome&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}"><span>Home</span></a></li>
             <li><a href="/baloncestoLigaWeb/userController?userlist=perfil&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}"><span>Perfil</span></a></li>
-            <li><a href="/baloncestoLigaWeb/userController?userlist=calendar&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}&date=${hoy}"><span>Calendario</span></a></li>
-            <li><a href="/baloncestoLigaWeb/userController?userlist=equip&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}"><span>Equipo</span></a></li>
-            <li><a href="/baloncestoLigaWeb/userController?userlist=partidos&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}&date=${hoy}"><span>Partidos</span></a></li>
+            <li><a href="/baloncestoLigaWeb/userController?userlist=calendar&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}&all=${all}"><span>Calendario</span></a></li>
+            <li><a href="/baloncestoLigaWeb/userController?userlist=partidos&userid=${usuario.idUsuario}&userol=${userol}&rolling=${rolling}&all=${all}"><span>Partidos</span></a></li>
             <li><a href="/baloncestoLigaWeb/BalonLigaController?list=balon"><span>Cerrar Sesion</span></a></li>
         </ul>
     </div>

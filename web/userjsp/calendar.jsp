@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,14 +17,24 @@
     </head>
     <body>
         <div id="mainwrap">
-            <jsp:include page="menu.jsp" flush="true" />
+            <jsp:include page="${typemenu}.jsp" flush="true" />
             <div id="rightcol">
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
-                    <h2>Calendario de Usuario</h2>
-                    <h3>CALENDAR</h3>
-                     <img src="imgs/usuario.jpg"  />
+                     <h3>Calendario</h3>
+                    <table>
+                        <tr>
+                          <th>Fecha</th>
+                          <th>Hora</th>
+                          <th>Lugar</th>
+                          <th>Jornada</th>
+                          <th>Equipo</th>
+                          <th>vs Equipo</th>
+                          <th>Resultados</th>
+                        </tr>
+                        <jsp:include page="${userol}calendar.jsp" flush="true" />
+                        </table>
                 </div>
                 <jsp:include page="/jsp/footer.jsp" flush="true" />
             </div>

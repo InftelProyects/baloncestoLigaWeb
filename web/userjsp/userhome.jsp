@@ -16,34 +16,31 @@
     </head>
     <body>
         <div id="mainwrap">
-            <jsp:include page="menu.jsp" flush="true" />
+            <jsp:include page="${typemenu}.jsp" flush="true" />
             <div id="rightcol">
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Bienvenida ${usuario.personaIdPersona.nombre} ${usuario.personaIdPersona.apellidos}</h2>
-                    <h3>Estas registrado como ${userol} en esta Liga de Baloncesto.</h3>
-                    <strong>Navega por tu sesión</strong>
-                    <p>Phasellus leo. Sed rhoncus vestibulum nunc. In hac habitasse platea dictumst. Quisque posuere, ante vitae lobortis tincidunt, turpis pede eleifend justo, ut feugiat leo nulla nec lacus. Maecenas mollis lacinia nisl. In auctor purus a nibh. Curabitur pharetra dui ac dui. Etiam porta dictum felis. In a nisl in neque mattis dignissim. Proin mattis nunc sit amet mauris. Morbi turpis. Donec nonummy, magna nec vestibulum pretium, sem libero ultricies ligula, vel viverra magna magna ut pede. In quis neque. Nunc commodo pulvinar nisi. Suspendisse quis dolor. Vivamus placerat tempor tortor. Cras ullamcorper.</p>
-                    <h3>Ve tu Perfil</h3>
                     <br>
-                    <img src="imgs/otro.jpg" class="floatleft" alt="" />
+                    <h3>Estás registrado como ${userol} en esta Liga de Baloncesto.</h3>
+                    <span style="font-weight: bold;font-size: medium">Navega por tu sesión</span>
                     <br>
-                    <h3>Atento a tu Calendario</h3>
-                    <img src="imgs/otro.jpg" class="floatleft" alt="" />
                     <br>
-                    <h3>Observa a tu Equipo</h3>
+                    <span style="font-size: small">Formas parte de nuestro grupo de BalonLiga. Aprovecha todas nuestras opciones para ti: </span>
                     <br>
-                    <img src="imgs/otro.jpg" class="floatleft" alt="" />
                     <br>
-                    <h3>Repasa tus partidos</h3>
-                    <br>
-                    <img src="imgs/otro.jpg" class="floatleft" alt="" />
-                    <br>
-                    <h3>Imprime tu historial</h3>
-                    <br>
-                    <img src="imgs/otro.jpg" class="floatleft" alt="" />
-                    <br>
+                    <ul>
+                        <li><h3>Ve tu Perfil</h3>
+                        <img src="imgs/otro.jpg" height="120" width="200" alt="" /> </li>
+                    
+                        <li><h3>Atento a tu Calendario</h3><img src="imgs/otro.jpg" height="120" width="200" alt="" /></li>
+                        
+                        <li><h3>Observa a tu Equipo</h3><img src="imgs/otro.jpg" height="120" width="200" alt="" /></li>
+                        
+                        <li><h3>Repasa tus partidos</h3><img src="imgs/otro.jpg" height="120" width="200" alt="" /></li>
+                         
+                    </ul>
                 </div>
                 <jsp:include page="/jsp/footer.jsp" flush="true" />
             </div>

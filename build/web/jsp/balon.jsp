@@ -21,20 +21,21 @@
                <jsp:include page="header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
-                    <h2>Bienvenida a BalonLiga</h2>
+                      <h2>Bienvenida a BalonLiga</h2>
                     <h3>Esta web está dedicada a Gestionar Ligas de Baloncesto</h3>
-                    <strong>Notre vision</strong>
-                    <p>Phasellus leo. Sed rhoncus vestibulum nunc. In hac habitasse platea dictumst. Quisque posuere, ante vitae lobortis tincidunt, turpis pede eleifend justo, ut feugiat leo nulla nec lacus. Maecenas mollis lacinia nisl. In auctor purus a nibh. Curabitur pharetra dui ac dui. Etiam porta dictum felis. In a nisl in neque mattis dignissim. Proin mattis nunc sit amet mauris. Morbi turpis. Donec nonummy, magna nec vestibulum pretium, sem libero ultricies ligula, vel viverra magna magna ut pede. In quis neque. Nunc commodo pulvinar nisi. Suspendisse quis dolor. Vivamus placerat tempor tortor. Cras ullamcorper.</p>
-                    <h3>Le secret de la reussite !</h3>
-                    <img src="imgs/otro.jpg" class="floatleft" alt="" />
-                    <p><strong>Phasellus leo. Sed rhoncus vestibulum nunc. In hac habitasse platea dictumst. Quisque posuere, ante vitae lobortis tincidunt, turpis pede eleifend justo, ut feugiat leo nulla nec lacus.</strong> Maecenas mollis lacinia nisl. In auctor purus a nibh. Curabitur pharetra dui ac dui. Etiam porta dictum felis. In a nisl in neque mattis dignissim. Proin mattis nunc sit amet mauris. Morbi turpis. Donec nonummy, magna nec vestibulum pretium, sem libero ultricies ligula, vel viverra magna magna ut pede. In quis neque. Nunc commodo pulvinar nisi. Suspendisse quis dolor. Vivamus placerat tempor tortor. Cras ullamcorper.</p>
-                    <ul class="bullet">
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes</li>
+                    <strong>Nuestra visión</strong>
+                    <br>
+                    <p> Es mejorar la administración de las ligas de Baloncesto de forma rápida y fácil.</p>
+                    <br>
+                    <h3>Nosotros nos dedicamos a :</h3>
+                    <br>
+                     <ul class="bullet">
+                        <li>Organizar una liga de baloncesto para todas las edades y géneros</li>
+                        <li>Crear equipos de todos los niveles</li>
+                        <li>Administrar los partidos</li>
+         
                     </ul>
+                    <img src="imgs/otro.jpg"  alt="" />
                 </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>

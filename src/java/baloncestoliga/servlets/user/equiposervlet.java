@@ -5,10 +5,8 @@
  */
 package baloncestoliga.servlets.user;
 
-import baloncestoliga.model.facade.PartidoFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,18 +17,23 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author inftel07
  */
-@WebServlet(name = "partidosservlet", urlPatterns = {"/partidosservlet"})
-public class partidosservlet extends HttpServlet {
+@WebServlet(name = "equiposervlet", urlPatterns = {"/equiposervlet"})
+public class equiposervlet extends HttpServlet {
 
-    @EJB
-    private PartidoFacade partidoFacade;
-
-    
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
+           String rol = request.getParameter("userol") ;
+           String url=rol+"equipo.jsp";
+           request.setAttribute("rol", url);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -15,6 +15,9 @@ import baloncestoliga.model.facade.JugadorFacade;
 import baloncestoliga.model.facade.UsuarioFacade;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -67,34 +70,46 @@ public class userController extends HttpServlet {
                 Jugador jueg;
                 Arbitro arb;
                 Entrenador ent;
+                 String menu="";
+                List <Arbitro> arbpar=new ArrayList<Arbitro>();
                 if(p.equals('j')){
                     request.setAttribute("imagen", "imgs/jugador.jpg");
                     rol="Jugador";
+                    menu="menu";
                     jueg=jugadorFacade.find(bb);
                     request.setAttribute("rolling", jueg);
                 } else if (p.equals('r')){
                     request.setAttribute("imagen", "imgs/arbitro.jpg");
                     rol="Arbitro";
+                    menu="menua";
                     arb=arbitroFacade.find(bb);
+                    arbpar=arbitroFacade.findAll();
                     request.setAttribute("rolling", arb);
+                    request.setAttribute("all", arbpar);
                 } else if (p.equals('e')) {
                     request.setAttribute("imagen", "imgs/entrenador.jpg");
                     rol="Entrenador";
+                    menu="menu";
                     ent=entrenadorFacade.find(bb);
                     request.setAttribute("rolling", ent);
                 } else {
                     request.setAttribute("imagen", "imgs/usuario.jpg");
                     rol="Usuario";
                 }
+                request.setAttribute("typemenu", menu);
                 request.setAttribute("userol", rol);
+                
+                
+                Date hoy=new Date();
+                request.setAttribute("hoy", hoy);
                 String url = "";
 		String list = request.getParameter("userlist");
            
 		
-                if (list != null) {
-                    if(list.equals("perfil")) {
+               if (list != null) {
+                    if(list.equals("perfil") || list.equals("equipo")) {
                         String base = "/";
-                        String ext="servlet?rol="+p;
+                        String ext="servlet";
                         url = base+list+ext;
                         
                     } else {

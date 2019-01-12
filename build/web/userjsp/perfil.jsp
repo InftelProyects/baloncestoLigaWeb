@@ -16,7 +16,7 @@
     </head>
     <body>
          <div id="mainwrap">
-            <jsp:include page="menu.jsp" flush="true" />
+            <jsp:include page="${typemenu}.jsp" flush="true" />
             <div id="rightcol">
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>

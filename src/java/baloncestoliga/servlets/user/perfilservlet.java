@@ -36,7 +36,7 @@ public class perfilservlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       
-        String rol = request.getParameter("rol") ;
+        String rol = request.getParameter("userol") ;
         String url=rol+".jsp";
         request.setAttribute("rol", url);
         
