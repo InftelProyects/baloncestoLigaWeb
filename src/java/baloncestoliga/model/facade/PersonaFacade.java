@@ -9,6 +9,7 @@ import baloncestoliga.model.Persona;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 /**
@@ -38,6 +39,20 @@ public class PersonaFacade extends AbstractFacade<Persona> {
                 .getResultList();
         
         return user.get(0);
+    }
+    
+    public String findByDni(String persona_dni){
+        String dni = null;
+        try{
+        dni = (String) em.createQuery("SELECT p.dni FROM Persona p WHERE p.dni = ?1 ")
+                .setParameter(1, persona_dni)
+                .getSingleResult();
+        }catch(NoResultException e){
+            dni=null;
+            return dni;
+            
+        }
+        return dni;
     }
     
 }

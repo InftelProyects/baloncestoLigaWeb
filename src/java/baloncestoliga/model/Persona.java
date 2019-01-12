@@ -101,6 +101,14 @@ public class Persona implements Serializable {
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
     }
+    
+    public Persona(String dni, String nombre, String apellidos, String telefono, String fechaNacimiento) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
     public BigDecimal getIdPersona() {
         return idPersona;
