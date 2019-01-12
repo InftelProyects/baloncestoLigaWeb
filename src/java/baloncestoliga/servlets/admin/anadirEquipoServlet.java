@@ -63,6 +63,8 @@ public class anadirEquipoServlet extends HttpServlet {
             if(existe == null){
                 Equipo e = new Equipo(nombre,categoria);
                 equipoFacade.create(e);
+                request.setAttribute("creado", "¡Equipo Añadido!");
+                request.getRequestDispatcher("AnadirEquipoJSP.jsp").forward(request, response);
             } 
         } 
         

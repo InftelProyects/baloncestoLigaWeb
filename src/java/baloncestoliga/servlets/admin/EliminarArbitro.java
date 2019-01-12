@@ -11,6 +11,7 @@ import baloncestoliga.model.facade.ArbitroFacade;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,11 +45,12 @@ public class EliminarArbitro extends HttpServlet {
              
             id= request.getParameter("id");
             int id2 = Integer.parseInt(id);
-            Arbitro a = arbitroFacade.find(id2);
+            BigDecimal id4=new BigDecimal(id2);
+            Arbitro a = arbitroFacade.find(id4);
             arbitroFacade.remove(a);
            
-            request.setAttribute("info", "Arbitro eliminado");
-            request.getRequestDispatcher("/adminjsp/eliminado.jsp").forward(request, response);
+            request.setAttribute("info", "¡Arbitro Eliminado!");
+            request.getRequestDispatcher("/adminjsp/EliminarArbitro.jsp").forward(request, response);
         }
     
 
