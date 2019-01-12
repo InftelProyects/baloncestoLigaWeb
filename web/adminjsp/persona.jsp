@@ -22,7 +22,7 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Administración de Equipos</h2>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AñadirPersonaJSP'" type="button" >Añadir persona</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirPersonaJSP'" type="button" >Añadir persona</button>
                     <br>
                     <strong>A continución se muestra las listas de todos los 
                         participantes en la liga según su rol.</strong><br>
