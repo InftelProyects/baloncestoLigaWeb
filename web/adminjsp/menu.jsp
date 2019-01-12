@@ -23,7 +23,7 @@
     <div id="mainnav">
         <ul>
             <li><a href="/baloncestoLigaWeb/adminController?adminlist=perfil"><span>Gestor de equipos</span></a></li>
-            <li><a href="/baloncestoLigaWeb/adminController?adminlist=PersonaJSP"><span>Gestor de personas</span></a></li>
+            <li><a href="/baloncestoLigaWeb/adminController?adminlist=persona"><span>Gestor de personas</span></a></li>
             <li><a href="/baloncestoLigaWeb/adminController?adminlist=equip"><span>Gestor de entrenadores</span></a></li>
             <li><a href="/baloncestoLigaWeb/adminController?adminlist=partidos"><span>Gestor de arbitros</span></a></li>
             <li><a href="/baloncestoLigaWeb/adminController?adminlist=historial"><span>Gestor de partidos</span></a></li>
