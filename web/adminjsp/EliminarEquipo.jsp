@@ -21,8 +21,8 @@
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
-                    <h2>Eliminar Arbitro</h2>
-                    <form name="formcontacto" action="EliminarArbitro" method="post">
+                    <h2>Eliminar Equipo</h2>
+                    <form name="formcontacto" action="EliminarEquipo" method="post">
                     <div class="form_settings">
                     <!-- Campos formulario -->
                      

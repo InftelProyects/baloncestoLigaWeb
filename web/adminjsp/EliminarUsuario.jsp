@@ -21,21 +21,19 @@
                <jsp:include page="/jsp/header.jsp" flush="true" />
                 <div id="banner"></div>
                 <div id="content">
-                    <h2>Eliminar Arbitro</h2>
-                    <form name="formcontacto" action="EliminarArbitro" method="post">
+                    <h2>Eliminar Usuario</h2>
+                    <form name="formcontacto" action="EliminarUsuario" method="post">
                     <div class="form_settings">
                     <!-- Campos formulario -->
-                     
-                    <p><span>ID</span><input type="text" name="id" required/></p>
-                    <c:if test="${not empty info}">
+                     <c:if test="${not empty info}">
                         <h1 class="info">${info}</h1>
                      </c:if>
+                    <p><span>ID</span><input type="text" name="id" required/></p>
+
                     <button type="submit">Eliminar</button>
  
                      </div>
             </form>
-                    
-                     
                 </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>

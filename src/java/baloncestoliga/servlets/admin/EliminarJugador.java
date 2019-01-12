@@ -6,8 +6,9 @@
 package baloncestoliga.servlets.admin;
 
 
-import baloncestoliga.model.Arbitro;
-import baloncestoliga.model.facade.ArbitroFacade;
+
+import baloncestoliga.model.Jugador;
+import baloncestoliga.model.facade.JugadorFacade;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,11 +24,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author josep
  */
-@WebServlet(name = "EliminarArbitro", urlPatterns = {"/EliminarArbitro"})
-public class EliminarArbitro extends HttpServlet {
+@WebServlet(name = "EliminarJugador", urlPatterns = {"/EliminarJugador"})
+public class EliminarJugador extends HttpServlet {
 
     @EJB
-    private ArbitroFacade arbitroFacade;
+    private JugadorFacade jugadorFacade;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,15 +47,15 @@ public class EliminarArbitro extends HttpServlet {
             id= request.getParameter("id");
             int id2 = Integer.parseInt(id);
             BigDecimal id4=new BigDecimal(id2);
-            Arbitro a = arbitroFacade.find(id4);
+            Jugador a = jugadorFacade.find(id4);
             if(a!= null){
-                arbitroFacade.remove(a);
-                request.setAttribute("info", "¡Arbitro eliminado!");
+                jugadorFacade.remove(a);
+                request.setAttribute("info", "¡Jugador eliminado!");
             }
             else{
-                request.setAttribute("info", "El arbitro no existe");
+                request.setAttribute("info", "El jugador no existe");
             }
-            request.getRequestDispatcher("/adminjsp/EliminarArbitro.jsp").forward(request, response);
+            request.getRequestDispatcher("/adminjsp/EliminarJugador.jsp").forward(request, response);
         }
     
 
