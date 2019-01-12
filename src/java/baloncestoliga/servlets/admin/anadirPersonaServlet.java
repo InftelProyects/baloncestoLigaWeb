@@ -6,10 +6,12 @@
 package baloncestoliga.servlets.admin;
 
 
+import baloncestoliga.model.Arbitro;
 import baloncestoliga.model.Persona;
 import baloncestoliga.model.facade.PersonaFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -78,6 +80,9 @@ public class anadirPersonaServlet extends HttpServlet {
                 p.setTelefono(request.getParameter("telefono"));
                 p.setFechaNacimiento(request.getParameter("fechaNacimiento")); */
                 personaFacade.create(p);
+       
+                request.setAttribute("info", "¡Persona Añadida!");
+                request.getRequestDispatcher("/adminjsp/AnadirPersonaJSP.jsp").forward(request, response);
             } 
         }              
         
