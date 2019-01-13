@@ -30,6 +30,9 @@ import javax.servlet.http.HttpServletResponse;
 public class ActualizarPartido extends HttpServlet {
 
     @EJB
+    private EquipoFacade equipoFacade;
+
+    @EJB
     private PartidoFacade partidoFacade;
 
     
@@ -51,7 +54,10 @@ public class ActualizarPartido extends HttpServlet {
          int id2 = Integer.parseInt(id);
          BigDecimal id4=new BigDecimal(id2);
          
-         
+         /*String idlocal = request.getParameter("idLocalint");
+         int idlocalint = Integer.parseInt(idlocal);
+         BigDecimal idlocalbig=new BigDecimal(idlocalint);
+         Equipo eq = equipoFacade.find(idlocalbig);*/
  
            Partido e = partidoFacade.find(id4);
             if (partidoFacade.find(id4) != null){
@@ -59,7 +65,7 @@ public class ActualizarPartido extends HttpServlet {
                 e.setLocalizacion(request.getParameter("localizacion"));
                 e.setResultado(request.getParameter("resultado"));
                 e.setJornada(request.getParameter("jornada"));
-              //e.setEquipoIdEquipo(request.getParameter("idLocalint"));
+              //e.setEquipoIdEquipo(request.getParameter(id));
               //e.setEquipoIdEquipo1(request.getParameter("idVisitante"));
                 partidoFacade.edit(e);
             request.setAttribute("info", "¡Partido actualizado!");
