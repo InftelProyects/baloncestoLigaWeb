@@ -6,6 +6,7 @@
 package baloncestoliga.model.facade;
 
 import baloncestoliga.model.Persona;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -54,5 +55,26 @@ public class PersonaFacade extends AbstractFacade<Persona> {
         }
         return dni;
     }
-    
+     public BigDecimal findById(String persona_dni){
+        BigDecimal id = null;
+        try{
+        id = (BigDecimal) em.createQuery("SELECT p.idPersona FROM Persona p WHERE p.dni = ?1 ")
+                .setParameter(1, persona_dni)
+                .getSingleResult();
+        }catch(NoResultException e){
+            id=null;
+            return id;
+            
+        }
+        return id;
+    }
+     
+     public void UpdatePersona(BigDecimal id,String telefono){
+         
+         
+      em.createQuery( "UPDATE PERSONA P SET P.TELEFONO=?1 WHERE P.ID_PERSONA = ?2")
+              .setParameter(1, id)
+              .setParameter(2,telefono)
+              .executeUpdate();
+     }
 }
