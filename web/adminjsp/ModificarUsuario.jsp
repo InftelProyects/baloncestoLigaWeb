@@ -33,7 +33,6 @@
                      </c:if>
                 <p><span>ID</span><input type="text" name="id" required/></p>
                 <h3>Campos a actualizar</h3>
-               <p><input type="text" name="id" required placeholder="id"/></p>
                 <p><input type="text" name="username" required placeholder="Nombre de Usuario"/></p>
                 <p><input type="text" name="password" required placeholder="Contraseña"/></p>
                 <p><input type="text" name="email" required placeholder="Email"/></p>

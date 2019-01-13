@@ -47,6 +47,8 @@ public class ActualizarUsuario extends HttpServlet {
          String id = request.getParameter("id");
          int id2 = Integer.parseInt(id);
          BigDecimal id4=new BigDecimal(id2);
+         
+         
          String rol=request.getParameter("rol");
          char c = rol.charAt(0);
          
@@ -56,7 +58,7 @@ public class ActualizarUsuario extends HttpServlet {
                 u.setPassword(request.getParameter("password"));
                 u.setEmail(request.getParameter("email"));
                 u.setRol(c);
-                u.setPersonaIdPersona(request.getParameter("idPersona"));
+                //u.setPersonaIdPersona(request.getParameter("idPersona"));
                 usuarioFacade.edit(u);
             request.setAttribute("info", "¡usuario actualizado!");
             }
@@ -64,7 +66,7 @@ public class ActualizarUsuario extends HttpServlet {
             {
                 request.setAttribute("info", "¡Usuario o persona no existen!");
             }
-            request.getRequestDispatcher("/adminjsp/ModificarPersonaJSP.jsp").forward(request, response);
+            request.getRequestDispatcher("/adminjsp/ModificarUsuario.jsp").forward(request, response);
   
     }
 
