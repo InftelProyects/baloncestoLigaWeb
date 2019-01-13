@@ -8,6 +8,7 @@ package baloncestoliga.servlets.admin;
 import baloncestoliga.model.Arbitro;
 
 import baloncestoliga.model.facade.ArbitroFacade;
+import baloncestoliga.model.facade.PersonaFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -26,7 +27,11 @@ import javax.servlet.http.HttpServletResponse;
 public class anadirArbitroServlet extends HttpServlet {
 
     @EJB
+    private PersonaFacade personaFacade;
+
+    @EJB
     private ArbitroFacade arbitroFacade;
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -54,7 +59,7 @@ public class anadirArbitroServlet extends HttpServlet {
         String provincia = request.getParameter("provincia");
         //String id_equipo = request.getParameter("id_equipo");
         
-        
+        /*
         
         if(request.getParameter("id_arbitro").isEmpty() || request.getParameter("provincia").isEmpty()){
             
@@ -63,7 +68,7 @@ public class anadirArbitroServlet extends HttpServlet {
             if(!request.getParameter("provincia").isEmpty())
                 request.getSession().setAttribute("provincia", request.getParameter("provincia"));
            /* if(!request.getParameter("id_equipo").isEmpty())
-                request.getSession().setAttribute("id_equipo", request.getParameter("id_equipo"));*/
+                request.getSession().setAttribute("id_equipo", request.getParameter("id_equipo"));
             
             
             request.setAttribute("error", "Debe rellenar todos los campos");
@@ -72,15 +77,19 @@ public class anadirArbitroServlet extends HttpServlet {
         }
         
         else{
-           
-        Arbitro a = arbitroFacade.find(id4);
-            if(a == null){
-                arbitroFacade.create(a);
+           */
+            //Arbitro a = arbitroFacade.find(id4);
+            if(personaFacade.find(id4) !=null){
+                Arbitro b = new Arbitro(id4,provincia);
+                arbitroFacade.create(b);
                 request.setAttribute("info", "¡Arbitro creado!");    
            
-                request.getRequestDispatcher("/adminjsp/AnadirArbitroJSP.jsp").forward(request, response);
-            } 
-        }              
+                
+            } else{
+            request.setAttribute("info", "¡Persona no existe!");    
+            }
+            request.getRequestDispatcher("/adminjsp/AnadirArbitroJSP.jsp").forward(request, response);
+        //}              
         
     
     }

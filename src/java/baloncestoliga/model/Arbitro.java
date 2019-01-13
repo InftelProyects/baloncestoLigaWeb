@@ -39,8 +39,8 @@ public class Arbitro implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq4")   
-    @SequenceGenerator (name = "seq4", sequenceName = "ARBITRO_SEQ",initialValue = 10, allocationSize = 1)
+   // @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq4")   
+   // @SequenceGenerator (name = "seq4", sequenceName = "ARBITRO_SEQ",initialValue = 10, allocationSize = 1)
     @Id
     @Basic(optional = false)
     @NotNull
