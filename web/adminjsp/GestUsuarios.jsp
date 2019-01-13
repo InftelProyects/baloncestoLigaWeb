@@ -23,7 +23,7 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Administración de Usuarios</h2>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirUsuario'" type="button" >Añadir usuario</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirUsuarioJSP'" type="button" >Añadir usuario</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarUsuario'" type="button" >Eliminar usuario</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarUsuario'" type="button" >Modificar usuario</button>
                     <br>

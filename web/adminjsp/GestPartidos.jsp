@@ -23,7 +23,7 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Administración de Partidos</h2>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirPartido'" type="button" >Añadir partido</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirPartidoJSP'" type="button" >Añadir partido</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarPartido'" type="button" >Eliminar partido</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPartido'" type="button" >Modificar partido</button>
                     <br>
