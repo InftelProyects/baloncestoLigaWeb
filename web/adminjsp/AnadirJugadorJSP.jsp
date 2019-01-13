@@ -1,6 +1,6 @@
 <%-- 
-    Document   : anadirArbitroJSP
-    Created on : 13-ene-2019, 19:47:52
+    Document   : AnadirJugadorJSP
+    Created on : 13-ene-2019, 22:04:58
     Author     : beatrizillanesalcaide
 --%>
 
@@ -22,15 +22,18 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>${creado}</h2>
-                    <h2>Añadir Arbitro</h2>
-                    <form name="formcontacto" action="anadirArbitroServlet" method="post">
+                    <h2>Añadir Jugador</h2>
+                    <form name="formcontacto" action="anadirJugadorServlet" method="post">
               <div class="form_settings">
                 <!-- Campos formulario -->
                <c:if test="${not empty info}">
                         <h1 class="info">${info}</h1>
                      </c:if>
-                <p><span>Identificador Arbitro</span><input type="text" name="id_arbitro" required/></p>
-                <p><span>Provincia</span><input type="text" name="provincia" required/></p>
+                <p><span>Identificador Jugador</span><input type="text" name="id_jugador" required/></p>     
+                <p><span>Dorsal</span><input type="text" name="dorsal" required/></p>
+                <p><span>Altura (cm)</span><input type="text" name="altura" required/></p>
+                <p><span>Peso (kg)</span><input type="text" name="peso" required/></p>
+                
                <%-- <p><span>Identificador Partido</span><input type="text" name="id_partido" required/></p> --%>
                 <button type="submit">Añadir</button>
  

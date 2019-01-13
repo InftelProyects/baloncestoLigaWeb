@@ -1,6 +1,6 @@
 <%-- 
-    Document   : anadirArbitroJSP
-    Created on : 13-ene-2019, 19:47:52
+    Document   : AnadirUsuarioJSP
+    Created on : 13-ene-2019, 22:07:16
     Author     : beatrizillanesalcaide
 --%>
 
@@ -22,15 +22,20 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>${creado}</h2>
-                    <h2>Añadir Arbitro</h2>
-                    <form name="formcontacto" action="anadirArbitroServlet" method="post">
+                    <h2>Añadir Usuario</h2>
+                    <form name="formcontacto" action="anadirUsuarioServlet" method="post">
               <div class="form_settings">
                 <!-- Campos formulario -->
                <c:if test="${not empty info}">
                         <h1 class="info">${info}</h1>
                      </c:if>
-                <p><span>Identificador Arbitro</span><input type="text" name="id_arbitro" required/></p>
-                <p><span>Provincia</span><input type="text" name="provincia" required/></p>
+                <p><span>Identificador Usuario</span><input type="text" name="id_usuario" required/></p>
+                <p><span>Identificador Persona</span><input type="text" name="id_persona" required/></p>
+                <p><span>Rol</span><input type="text" name="rol" required/></p>
+                <p><span>Username</span><input type="text" name="username" required/></p>
+                <p><span>Password</span><input type="text" name="password" required/></p>
+                <p><span>Email</span><input type="text" name="email" required/></p>
+                
                <%-- <p><span>Identificador Partido</span><input type="text" name="id_partido" required/></p> --%>
                 <button type="submit">Añadir</button>
  
