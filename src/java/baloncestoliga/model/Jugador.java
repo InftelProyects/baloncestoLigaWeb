@@ -76,7 +76,7 @@ public class Jugador implements Serializable {
         this.idPersona = idPersona;
     }
 
-    public Jugador(BigDecimal idPersona, BigInteger altura, BigInteger peso, BigInteger dorsal) {
+    public Jugador(BigDecimal idPersona, BigInteger altura, BigInteger peso, BigInteger dorsal, BigDecimal equipoIdEquipo) {
         this.idPersona = idPersona;
         this.altura = altura;
         this.peso = peso;
