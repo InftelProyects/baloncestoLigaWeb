@@ -9,9 +9,13 @@ import baloncestoliga.servlets.main.*;
 import baloncestoliga.model.Arbitro;
 import baloncestoliga.model.Entrenador;
 import baloncestoliga.model.Jugador;
+import baloncestoliga.model.Persona;
+import baloncestoliga.model.Usuario;
 import baloncestoliga.model.facade.ArbitroFacade;
 import baloncestoliga.model.facade.EntrenadorFacade;
 import baloncestoliga.model.facade.JugadorFacade;
+import baloncestoliga.model.facade.PersonaFacade;
+import baloncestoliga.model.facade.UsuarioFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -31,6 +35,12 @@ import javax.servlet.http.HttpServletResponse;
 public class participanservletADMIN extends HttpServlet {
 
     @EJB
+    private UsuarioFacade usuarioFacade;
+
+    @EJB
+    private PersonaFacade personaFacade;
+
+    @EJB
     private JugadorFacade jugadorFacade;
 
     @EJB
@@ -38,18 +48,38 @@ public class participanservletADMIN extends HttpServlet {
 
     @EJB
     private ArbitroFacade arbitroFacade;
+    
 
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            List <Entrenador> entrenadores= entrenadorFacade.findAll();
-            request.setAttribute("entrenadores",entrenadores);
-            List <Arbitro> arbitros= arbitroFacade.findAll();
-            request.setAttribute("arbitros",arbitros);
-             List <Jugador> jugadores= jugadorFacade.findAll();
-            request.setAttribute("jugadores",jugadores);
-            
-            request.getRequestDispatcher("/adminjsp/participantes.jsp").forward(request, response);
+            String type=request.getParameter("type"); 
+            List <Persona> personas;
+            List <Entrenador> entrenadores;
+            List <Arbitro> arbitros;
+            List <Jugador> jugadores;
+            List <Usuario> usuarios;
+            switch(type){
+                case "GestPersona":  personas= personaFacade.findAll();
+                                     request.setAttribute("personas",personas);
+                    break;
+                case "GestEntrenador":  entrenadores= entrenadorFacade.findAll();
+                                        request.setAttribute("personas",entrenadores);
+                    break;
+                case "GestArbitro":  arbitros= arbitroFacade.findAll();
+                                    request.setAttribute("personas",arbitros);
+                    break;
+                case "GestJugador":  jugadores= jugadorFacade.findAll();
+                                    request.setAttribute("personas",jugadores);
+                    break;
+                case "GestUsuarios":  usuarios= usuarioFacade.findAll();
+                                        request.setAttribute("personas",usuarios);
+                    break;
+                default : type="adminhome";
+                    
+            }
+         
+            request.getRequestDispatcher("/adminjsp/"+type+".jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

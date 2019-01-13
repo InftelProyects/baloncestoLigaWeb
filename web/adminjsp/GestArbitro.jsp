@@ -26,6 +26,34 @@
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirArbitro'" type="button" >Añadir arbitro</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarArbitro'" type="button" >Eliminar arbitro</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarArbitro'" type="button" >Modificar arbitro</button>
+                    <br>
+                    <strong>A continución se muestra las listas de todas las 
+                        personas en la liga según su rol.</strong><br>
+                    
+                        
+                    <br>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Provincia</th>
+                            <th>ID Partido</th>
+                        </tr>
+                        <c:forEach var="persona" items="${personas}">
+                        <tr>
+                          <td>${persona.idPersona}</td>
+                          <td>${persona.persona.dni}</td>
+                          <td>${persona.persona.nombre}</td>
+                          <td>${persona.persona.apellidos}</td>
+                          <td>${persona.provincia}</td>
+                          <td>${persona.partidoIdPartido.idPartido}</td>
+                        </tr>
+                        </c:forEach>
+                    </table>
+                    
+                </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>
         </div>

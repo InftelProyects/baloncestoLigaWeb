@@ -26,6 +26,38 @@
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirJugador'" type="button" >Añadir jugador</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarJugador'" type="button" >Eliminar jugador</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarJugador'" type="button" >Modificar jugador</button>
+                    <br>
+                    <strong>A continución se muestra las listas de todas las 
+                        personas en la liga según su rol.</strong><br>
+                    
+                        
+                    <br>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Dorsal</th>
+                            <th>Equipo</th>
+                            <th>Altura (cm)</th>
+                            <th>Peso (kg)</th>
+                        </tr>
+                        <c:forEach var="persona" items="${personas}">
+                        <tr>
+                          <td>${persona.idPersona}</td>
+                          <td>${persona.persona.dni}</td>
+                          <td>${persona.persona.nombre}</td>
+                          <td>${persona.persona.apellidos}</td>
+                          <td>${persona.dorsal}</td>
+                          <td>${persona.equipoIdEquipo.nombre}</td>
+                          <td>${persona.altura}</td>
+                          <td>${persona.peso}</td>
+                        </tr>
+                        </c:forEach>
+                    </table>
+                    
+                </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>
         </div>

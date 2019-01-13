@@ -23,7 +23,7 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Administración de Equipos</h2>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirEquipo'" type="button" >Añadir equipo</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirEquipoJSP'" type="button" >Añadir equipo</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarEquipo'" type="button" >Eliminar equipo</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarEquipo'" type="button" >Modificar equipo</button>
                     
@@ -35,11 +35,15 @@
                         <tr>
                             <th>Nombre</th>
                             <th>ID</th>
-                           <c:forEach var="equipo" items="${equipo}">
-                           <th>${equipo.nombre}</th>
-                           <th>${equipo.idEquipo}</th>
-                            </c:forEach>
                         </tr>
+                        <c:forEach var="equipo" items="${equipos}">
+                        <tr>
+                           
+                           <td>${equipo.nombre}</td>
+                           <td>${equipo.idEquipo}</td>
+                            
+                        </tr>
+                        </c:forEach>
                      </table>   
                 <jsp:include page="footer.jsp" flush="true" />
             </div>

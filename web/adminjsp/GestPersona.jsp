@@ -25,69 +25,35 @@
                     <h2>Administración de Personas</h2>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirPersonaJSP'" type="button" >Añadir persona</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarPersona'" type="button" >Eliminar persona</button>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPersona'" type="button" >Modificar persona</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPersonaJSP'" type="button" >Modificar persona</button>
                     
                     <br>
                     <strong>A continución se muestra las listas de todas las 
                         personas en la liga según su rol.</strong><br>
                     
-                        <h3>Entrenadores</h3>
+                        
                     <br>
                     <table>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Equipo</th>
-                            <th>Nivel</th>
                             <th>ID</th>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Telefono</th>
+                            <th>Fecha de nacimiento</th>
                         </tr>
-                        <c:forEach var="entrenador" items="${entrenadores}">
+                        <c:forEach var="persona" items="${personas}">
                         <tr>
-                          <td>${entrenador.persona.apellidos}, ${entrenador.persona.nombre}</td>
-                          <td>${entrenador.equipoIdEquipo.nombre}</td>
-                          <td>${entrenador.nivel}</td>
-                          <td>${entrenador.idPersona}</td>
+                          <td>${persona.idPersona}</td>
+                          <td>${persona.dni}</td>
+                          <td>${persona.nombre}</td>
+                          <td>${persona.apellidos}</td>
+                          <td>${persona.telefono}</td>
+                          <td>${persona.fechaNacimiento}</td>
                         </tr>
                         </c:forEach>
                     </table>
-                    <br>
-                    <h3>Arbitros</h3>
-                    <br>
-                    <table>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Provincia</th>
-                            <th>Partidos</th>
-                            <th>ID</th>
-                        </tr>
-                       <c:forEach var="arbitro" items="${arbitros}">
-                        <tr>
-                          <td>${arbitro.persona.apellidos}, ${arbitro.persona.nombre}</td>
-                          <td>${arbitro.provincia}</td>
-                          <td>${arbitro.idPersona}</td>
-                        </tr>
-                        </c:forEach>
-                    </table>
-                    <br>
-                    <h3>Jugadores</h3>
-                    <br>
-                    <table>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Equipo</th>
-                            <th>Dorsal</th>
-                            <th>ID</th>
-                        </tr>
-                         <c:forEach var="jugador" items="${jugadores}">
-                        <tr>
-                          <td>${jugador.persona.apellidos}, ${jugador.persona.nombre}</td>
-                          <td>${jugador.equipoIdEquipo.nombre}</td>
-                          <td>${jugador.dorsal}</td>
-                          <td>${jugador.idPersona}</td>
-                          <td></td>
-                        </tr>
-                        </c:forEach>
-                    </table>
-                    <br>
+                    
                 </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>

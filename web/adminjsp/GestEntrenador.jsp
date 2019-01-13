@@ -26,6 +26,34 @@
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirEntrenadorJSP'" type="button" >Añadir entrenador</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarEntrenador'" type="button" >Eliminar entrenador</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarEntrenador'" type="button" >Modificar entrenador</button>
+                    <br>
+                    <strong>A continución se muestra las listas de todas las 
+                        personas en la liga según su rol.</strong><br>
+                    
+                        
+                    <br>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Nivel</th>
+                            <th>Equipo</th>
+                        </tr>
+                        <c:forEach var="persona" items="${personas}">
+                        <tr>
+                          <td>${persona.idPersona}</td>
+                          <td>${persona.persona.dni}</td>
+                          <td>${persona.persona.nombre}</td>
+                          <td>${persona.persona.apellidos}</td>
+                          <td>${persona.nivel}</td>
+                          <td>${persona.equipoIdEquipo.nombre}</td>
+                        </tr>
+                        </c:forEach>
+                    </table>
+                    
+                </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>
         </div>

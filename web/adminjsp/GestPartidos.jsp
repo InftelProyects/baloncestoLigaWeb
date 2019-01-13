@@ -27,13 +27,13 @@
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarPartido'" type="button" >Eliminar partido</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPartido'" type="button" >Modificar partido</button>
                     <br>
-                    <h3>A continuación se muestran los partidos de la Liga :</h3>
+                    <strong>A continuación se muestran los partidos de la Liga.</strong><br>
+                    
                     <br>
                     <table>
                         
                         <tr>
                           <th>Fecha</th>
-                          <th>Hora</th>
                           <th>Lugar</th>
                           <th>Jornada</th>
                           <th>Equipo</th>
@@ -44,7 +44,7 @@
                         <c:forEach var="partido" items="${partidos}">
                         <tr>
                           <td>${partido.fecha}</td>
-                          <td></td>
+                        
                           <td>${partido.localizacion}</td>
                           <td>${partido.jornada}</td>
                           <td>${partido.equipoIdEquipo.nombre}</td>

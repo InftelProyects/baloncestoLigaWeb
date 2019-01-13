@@ -30,11 +30,15 @@ public class adminController extends HttpServlet {
 		String url = "";
 		String list = request.getParameter("adminlist");
                 if (list != null) {
-                    if(list.equals("participantes")){
-                        url="/participanservletADMIN";
-                    } else {
-                        url = base+list+ext;
+                    if(list.equals("GestEquipos")){
+                        url="/equipservletAdmin";
+                    } else if(list.equals("GestPartidos")){
+                        url="/calendarservletAdmin";
                     }
+                    else {
+                        url="/participanservletADMIN?type="+list;
+                    }
+                   
                     
 		} else {
                     url=base+"adminhome"+ext;

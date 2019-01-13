@@ -26,6 +26,41 @@
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirUsuario'" type="button" >Añadir usuario</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarUsuario'" type="button" >Eliminar usuario</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarUsuario'" type="button" >Modificar usuario</button>
+                    <br>
+                    <strong>A continución se muestra las listas de todas las 
+                        personas en la liga según su rol.</strong><br>
+                    
+                        
+                    <br>
+                    <table>
+                        <tr>
+                            <th>ID Persona</th>
+                            <th>ID Usuario</th>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Email</th>
+                            
+                        </tr>
+                        <c:forEach var="persona" items="${personas}">
+                        <tr>
+                           
+                         <td>${persona.personaIdPersona.idPersona}</td>
+                          <td>${persona.idUsuario}</td>
+                          <td>${persona.personaIdPersona.dni}</td>
+                          <td>${persona.personaIdPersona.nombre}</td>
+                          <td>${persona.personaIdPersona.apellidos}</td>
+                          <td>${persona.username}</td>
+                          <td>${persona.password}</td>
+                          <td>${persona.email}</td>
+                         
+                        </tr>
+                        </c:forEach>
+                    </table>
+                    
+                </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>
         </div>
