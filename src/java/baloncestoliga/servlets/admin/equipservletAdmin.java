@@ -5,16 +5,14 @@
  */
 package baloncestoliga.servlets.admin;
 
-
-
-
+import baloncestoliga.servlets.main.*;
 import baloncestoliga.model.Equipo;
 import baloncestoliga.model.facade.EquipoFacade;
-import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.math.BigDecimal;
+import java.util.List;
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,43 +21,24 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author josep
+ * @author inftel07
  */
-@WebServlet(name = "EliminarEquipo", urlPatterns = {"/EliminarEquipo"})
-public class EliminarEquipo extends HttpServlet {
+@WebServlet(name = "equipservletAdmin", urlPatterns = {"/equipservletAdmin"})
+public class equipservletAdmin extends HttpServlet {
 
     @EJB
     private EquipoFacade equipoFacade;
 
- 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            List <Equipo> equipos= equipoFacade.findAll();
+      
+            request.setAttribute("equipos",equipos);
             
-            String id;
-             
-            id= request.getParameter("id");
-            int id2 = Integer.parseInt(id);
-            BigDecimal id4=new BigDecimal(id2);
-            Equipo a = equipoFacade.find(id4);
-            if(a!= null){
-                equipoFacade.remove(a);
-                request.setAttribute("info", "¡Equipo eliminado!");
-            }
-            else{
-                request.setAttribute("info", "El equipo no existe o está vinculado a un partido");
-            }
-            request.getRequestDispatcher("/adminjsp/EliminarEquipo.jsp").forward(request, response);
-        }
-    
+            RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/adminjsp/GestEquipos.jsp");
+            requestDispatcher.forward(request, response);
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

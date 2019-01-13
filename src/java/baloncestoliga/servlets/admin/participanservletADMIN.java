@@ -49,7 +49,7 @@ public class participanservletADMIN extends HttpServlet {
              List <Jugador> jugadores= jugadorFacade.findAll();
             request.setAttribute("jugadores",jugadores);
             
-            request.getRequestDispatcher("/adminjsp/persona.jsp").forward(request, response);
+            request.getRequestDispatcher("/adminjsp/participantes.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

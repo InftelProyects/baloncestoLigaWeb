@@ -26,6 +26,35 @@
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirPartido'" type="button" >Añadir partido</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarPartido'" type="button" >Eliminar partido</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPartido'" type="button" >Modificar partido</button>
+                    <br>
+                    <h3>A continuación se muestran los partidos de la Liga :</h3>
+                    <br>
+                    <table>
+                        
+                        <tr>
+                          <th>Fecha</th>
+                          <th>Hora</th>
+                          <th>Lugar</th>
+                          <th>Jornada</th>
+                          <th>Equipo</th>
+                          <th>vs Equipo</th>
+                          <th>Resultados</th>
+                          <th>ID</th>
+                        </tr>
+                        <c:forEach var="partido" items="${partidos}">
+                        <tr>
+                          <td>${partido.fecha}</td>
+                          <td></td>
+                          <td>${partido.localizacion}</td>
+                          <td>${partido.jornada}</td>
+                          <td>${partido.equipoIdEquipo.nombre}</td>
+                          <td>${partido.equipoIdEquipo1.nombre}</td>
+                          <td>${partido.resultado}</td>
+                          <td>${partido.idPartido}</td>
+                        </tr>
+                       </c:forEach>
+                    </table>
+                </div>
                 <jsp:include page="footer.jsp" flush="true" />
             </div>
         </div>
