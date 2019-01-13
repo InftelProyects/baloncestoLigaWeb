@@ -27,7 +27,7 @@
                      <table>
                         <tr>
                           <th>Fecha</th>
-                          <th>Hora</th>
+                       
                           <th>Lugar</th>
                           <th>Jornada</th>
                           <th>Equipo</th>
