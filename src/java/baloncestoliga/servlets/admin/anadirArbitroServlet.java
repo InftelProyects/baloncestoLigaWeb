@@ -58,8 +58,8 @@ public class anadirArbitroServlet extends HttpServlet {
         
         if(request.getParameter("id_arbitro").isEmpty() || request.getParameter("provincia").isEmpty()){
             
-            if(!request.getParameter("id_persona").isEmpty())
-                request.getSession().setAttribute("id_persona", request.getParameter("id_persona"));
+            if(!request.getParameter("id_arbitro").isEmpty())
+                request.getSession().setAttribute("id_arbitro", request.getParameter("id_arbitro"));
             if(!request.getParameter("provincia").isEmpty())
                 request.getSession().setAttribute("provincia", request.getParameter("provincia"));
            /* if(!request.getParameter("id_equipo").isEmpty())
