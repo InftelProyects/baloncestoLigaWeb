@@ -6,11 +6,10 @@
 package baloncestoliga.servlets.admin;
 
 import baloncestoliga.model.Equipo;
-import baloncestoliga.model.Partido;
 import baloncestoliga.model.Persona;
-import baloncestoliga.model.facade.EquipoFacade;
-import baloncestoliga.model.facade.PartidoFacade;
+import baloncestoliga.model.Usuario;
 import baloncestoliga.model.facade.PersonaFacade;
+import baloncestoliga.model.facade.UsuarioFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -26,16 +25,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author mohammed
  */
 
-@WebServlet(name = "ActualizarPartido", urlPatterns = {"/ActualizarPartido"})
-public class ActualizarPartido extends HttpServlet {
+@WebServlet(name = "ActualizarUsuario", urlPatterns = {"/ActualizarUsuario"})
+public class ActualizarUsuario extends HttpServlet {
 
     @EJB
-    private EquipoFacade equipoFacade;
-
-    @EJB
-    private PartidoFacade partidoFacade;
-
-    
+    private UsuarioFacade usuarioFacade;
     
 
     /**
@@ -53,28 +47,24 @@ public class ActualizarPartido extends HttpServlet {
          String id = request.getParameter("id");
          int id2 = Integer.parseInt(id);
          BigDecimal id4=new BigDecimal(id2);
+         String rol=request.getParameter("rol");
+         char c = rol.charAt(0);
          
-         String idlocal = request.getParameter("idLocalint");
-         int idlocalint = Integer.parseInt(idlocal);
-         BigDecimal idlocalbig=new BigDecimal(idlocalint);
-         Equipo eq = equipoFacade.find(idlocalbig);
- 
-           Partido e = partidoFacade.find(id4);
-            if (partidoFacade.find(id4) != null){
-                e.setFecha(request.getParameter("fecha"));
-                e.setLocalizacion(request.getParameter("localizacion"));
-                e.setResultado(request.getParameter("resultado"));
-                e.setJornada(request.getParameter("jornada"));
-              //e.setEquipoIdEquipo(eq);
-              //e.setEquipoIdEquipo1(request.getParameter("idVisitante"));
-                partidoFacade.edit(e);
-            request.setAttribute("info", "¡Partido actualizado!");
+           Usuario u = usuarioFacade.find(id4);
+            if (usuarioFacade.find(id4) != null){
+                u.setUsername(request.getParameter("username"));
+                u.setPassword(request.getParameter("password"));
+                u.setEmail(request.getParameter("email"));
+                u.setRol(c);
+                u.setPersonaIdPersona(request.getParameter("idPersona"));
+                usuarioFacade.edit(u);
+            request.setAttribute("info", "¡usuario actualizado!");
             }
             else
             {
-                request.setAttribute("info", "¡El partido no existe!");
+                request.setAttribute("info", "¡Usuario o persona no existen!");
             }
-            request.getRequestDispatcher("/adminjsp/ModificarPartido.jsp").forward(request, response);
+            request.getRequestDispatcher("/adminjsp/ModificarPersonaJSP.jsp").forward(request, response);
   
     }
 
