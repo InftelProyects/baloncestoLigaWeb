@@ -23,7 +23,7 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Administración de Arbitros</h2>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirArbitro'" type="button" >Añadir arbitro</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirArbitroJSP'" type="button" >Añadir arbitro</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarArbitro'" type="button" >Eliminar arbitro</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarArbitro'" type="button" >Modificar arbitro</button>
                     <br>
