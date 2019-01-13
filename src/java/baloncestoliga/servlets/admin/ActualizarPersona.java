@@ -40,13 +40,17 @@ public class ActualizarPersona extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-         String dni = request.getParameter("dni");
-         int id2 = Integer.parseInt(dni);
+         String id = request.getParameter("id");
+         int id2 = Integer.parseInt(id);
          BigDecimal id4=new BigDecimal(id2);
  
            Persona c = personaFacade.find(id4);
             if (personaFacade.find(id4) != null){
+                c.setDni(request.getParameter("dni"));
+                c.setNombre(request.getParameter("nombre"));
+                c.setApellidos(request.getParameter("apellidos"));
                 c.setTelefono(request.getParameter("telefono"));
+                c.setFechaNacimiento(request.getParameter("fechaNacimiento"));
                 personaFacade.edit(c);
             request.setAttribute("info", "¡Persona ACTUALIZADDA!");
             }

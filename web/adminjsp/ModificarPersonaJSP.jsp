@@ -31,11 +31,13 @@
                <c:if test="${not empty info}">
                         <h1 class="info">${info}</h1>
                      </c:if>
-                <p><span>ID</span><input type="text" name="dni" required/></p>
-                <!--<p><span>Nombre</span><input type="text" name="nombre" required/></p>
-                <p><span>Apellidos</span><input type="text" name="apellidos" required/></p>-->
+                <p><span>ID</span><input type="text" name="id" required/></p>
+                <h3>Campos a actualizar</h3>
+                <p><span>DNI</span><input type="text" name="dni" required/></p>
+                <p><span>Nombre</span><input type="text" name="nombre" required/></p>
+                <p><span>Apellidos</span><input type="text" name="apellidos" required/></p>
                 <p><span>Telefono</span><input type="text" name="telefono" required/></p>
-               <!-- <p><span>Fecha de nacimiento</span><input type="text" name="fechaNacimiento" required/></p>-->
+                <p><span>Fecha de nacimiento</span><input type="text" name="fechaNacimiento" required/></p>
                 
                 
                 <button type="submit">Actualizar</button>
