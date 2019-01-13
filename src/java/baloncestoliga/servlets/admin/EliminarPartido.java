@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author josep
  */
-@WebServlet(name = "EliminarPersona", urlPatterns = {"/EliminarPersona"})
+@WebServlet(name = "EliminarPartido", urlPatterns = {"/EliminarPartido"})
 public class EliminarPartido extends HttpServlet {
 
     @EJB
@@ -60,7 +60,7 @@ public class EliminarPartido extends HttpServlet {
             else{
                 request.setAttribute("info", "El partido no existe");
             }
-            request.getRequestDispatcher("/adminjsp/EliminarPersona.jsp").forward(request, response);
+            request.getRequestDispatcher("/adminjsp/EliminarPartido.jsp").forward(request, response);
         }
     
 
