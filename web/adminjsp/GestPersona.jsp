@@ -25,7 +25,7 @@
                     <h2>Administración de Personas</h2>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirPersonaJSP'" type="button" >Añadir persona</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarPersona'" type="button" >Eliminar persona</button>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPersona'" type="button" >Modificar persona</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarPersonaJSP'" type="button" >Modificar persona</button>
                     
                     <br>
                     <strong>A continución se muestra las listas de todas las 
