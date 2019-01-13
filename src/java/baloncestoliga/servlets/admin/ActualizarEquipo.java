@@ -5,7 +5,7 @@
  */
 package baloncestoliga.servlets.admin;
 
-import static baloncestoliga.model.Persona_.telefono;
+//import static baloncestoliga.model.Persona_.telefono;
 import baloncestoliga.model.facade.EquipoFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
