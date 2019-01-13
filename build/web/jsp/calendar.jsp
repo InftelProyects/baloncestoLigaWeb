@@ -26,27 +26,29 @@
                     <br>
                     <h3>A continuación se muestran los próximos partidos de la Liga :</h3>
                     <br>
-                    <table>
+                     <table>
                         
                         <tr>
                           <th>Fecha</th>
-                          <th>Hora</th>
                           <th>Lugar</th>
                           <th>Jornada</th>
                           <th>Equipo</th>
                           <th>vs Equipo</th>
-                          <th>Resultados</th>
+                         
                         </tr>
                         <c:forEach var="partido" items="${partidos}">
-                        <tr>
-                          <td>${partido.fecha}</td>
-                          <td></td>
-                          <td>${partido.localizacion}</td>
-                          <td>${partido.jornada}</td>
-                          <td>${partido.equipoIdEquipo.nombre}</td>
-                          <td>${partido.equipoIdEquipo1.nombre}</td>
-                          <td>${partido.resultado}</td>
-                        </tr>
+                         <fmt:parseDate pattern="dd/MM/yy" value="${partido.fecha}" var="date" />
+                           <c:if test="${date ge hoy}">
+                            
+                            <tr>
+                              <td>${partido.fecha}</td>
+                              <td>${partido.localizacion}</td>
+                              <td>${partido.jornada}</td>
+                              <td>${partido.equipoIdEquipo.nombre}</td>
+                              <td>${partido.equipoIdEquipo1.nombre}</td>
+
+                            </tr>
+                        </c:if>
                        </c:forEach>
                     </table>
                 </div>

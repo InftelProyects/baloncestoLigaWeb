@@ -20,7 +20,7 @@
     <div id="mainnav">
         <ul>
             <li><a href="/baloncestoLigaWeb/BalonLigaController?list=balon"><span>BalonLiga</span></a></li>
-            <li><a href="/baloncestoLigaWeb/BalonLigaController?list=calendar"><span>Calendario</span></a></li>
+            <li><a href="/baloncestoLigaWeb/BalonLigaController?list=calendar&hoy=${hoy}"><span>Calendario</span></a></li>
             <li><a href="/baloncestoLigaWeb/BalonLigaController?list=equip"><span>Equipos</span></a></li>
             <li><a href="/baloncestoLigaWeb/BalonLigaController?list=participan"><span>Participantes</span></a></li>
             <li><a href="/baloncestoLigaWeb/BalonLigaController?list=enter"><span>Entrar</span></a></li>
