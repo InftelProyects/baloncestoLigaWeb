@@ -29,9 +29,9 @@
                <c:if test="${not empty info}">
                         <h1 class="info">${info}</h1>
                      </c:if>
-                <p><span>Identificador Arbitro</span><input type="text" name="id_persona" required/></p>
+                <p><span>Identificador Arbitro</span><input type="text" name="id_arbitro" required/></p>
                 <p><span>Provincia</span><input type="text" name="provincia" required/></p>
-                <p><span>Identificador Partido</span><input type="text" name="id_partido" required/></p>
+               <%-- <p><span>Identificador Partido</span><input type="text" name="id_partido" required/></p> --%>
                 <button type="submit">Añadir</button>
  
               </div>

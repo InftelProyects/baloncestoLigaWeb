@@ -45,29 +45,29 @@ public class anadirArbitroServlet extends HttpServlet {
         
         String id;
              
-            id = request.getParameter("id_persona");
+            id = request.getParameter("id_arbitro");
             int id2 = Integer.parseInt(id);
             BigDecimal id4=new BigDecimal(id2);
             
         
         
         String provincia = request.getParameter("provincia");
-        String id_equipo = request.getParameter("id_equipo");
+        //String id_equipo = request.getParameter("id_equipo");
         
         
         
-        if(request.getParameter("id_persona").isEmpty() || request.getParameter("provincia").isEmpty() || request.getParameter("id_equipo").isEmpty()){
+        if(request.getParameter("id_arbitro").isEmpty() || request.getParameter("provincia").isEmpty()){
             
             if(!request.getParameter("id_persona").isEmpty())
                 request.getSession().setAttribute("id_persona", request.getParameter("id_persona"));
             if(!request.getParameter("provincia").isEmpty())
                 request.getSession().setAttribute("provincia", request.getParameter("provincia"));
-            if(!request.getParameter("id_equipo").isEmpty())
-                request.getSession().setAttribute("id_equipo", request.getParameter("id_equipo"));
+           /* if(!request.getParameter("id_equipo").isEmpty())
+                request.getSession().setAttribute("id_equipo", request.getParameter("id_equipo"));*/
             
             
             request.setAttribute("error", "Debe rellenar todos los campos");
-            request.getRequestDispatcher("AnadirArbitroJSP.jsp").forward(request, response); //Crear pagina error de login
+            //request.getRequestDispatcher("AnadirArbitroJSP.jsp").forward(request, response); //Crear pagina error de login
         
         }
         
