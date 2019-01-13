@@ -39,38 +39,23 @@ public class ActualizarPersona extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-       
-        //cargar los datos del formulario
-       
-         String telefono = request.getParameter("telefono");
+    
          String dni = request.getParameter("dni");
-         
-         
-          if(request.getParameter("telefono").isEmpty() || request.getParameter("dni").isEmpty()){
-            
-            if(!request.getParameter("dni").isEmpty())
-                request.getSession().setAttribute("dni", request.getParameter("dni"));
-            if(!request.getParameter("telefono").isEmpty())
-                request.getSession().setAttribute("telefono", request.getParameter("telefono"));
-            
-            
-            request.setAttribute("error", "Debe rellenar todos los campos");
-            request.getRequestDispatcher("ModificarPersonaJSP.jsp").forward(request, response);
-            //Crear pagina error de login
-        
-        }else{
-         
-            BigDecimal id_persona = personaFacade.findById(dni);
-            personaFacade.UpdatePersona(id_persona, telefono);
+         int id2 = Integer.parseInt(dni);
+         BigDecimal id4=new BigDecimal(id2);
+ 
+           Persona c = personaFacade.find(id4);
+            if (personaFacade.find(id4) != null){
+                c.setTelefono(request.getParameter("telefono"));
+                personaFacade.edit(c);
             request.setAttribute("info", "¡Persona ACTUALIZADDA!");
+            }
+            else
+            {
+                request.setAttribute("info", "¡Persona no existe!");
+            }
             request.getRequestDispatcher("/adminjsp/ModificarPersonaJSP.jsp").forward(request, response);
-
-
-    }
-         
-         
-         
+  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

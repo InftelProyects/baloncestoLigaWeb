@@ -31,7 +31,7 @@
                <c:if test="${not empty info}">
                         <h1 class="info">${info}</h1>
                      </c:if>
-                <p><span>Dni</span><input type="text" name="dni" required/></p>
+                <p><span>ID</span><input type="text" name="dni" required/></p>
                 <!--<p><span>Nombre</span><input type="text" name="nombre" required/></p>
                 <p><span>Apellidos</span><input type="text" name="apellidos" required/></p>-->
                 <p><span>Telefono</span><input type="text" name="telefono" required/></p>
