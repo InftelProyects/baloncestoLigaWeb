@@ -35,11 +35,12 @@ public class adminController extends HttpServlet {
                     } else if(list.equals("GestPartidos")){
                         url="/calendarservletAdmin";
                     }
-                    else {
+                    else if (list.equals("GestPersona") || list.equals("GestEntrenador") || list.equals("GestJugador") || list.equals("GestArbitro") || list.equals("GestUsuarios")){
                         url="/participanservletADMIN?type="+list;
+                    } else {
+                        url=base+list+ext;
                     }
-                   
-                    
+                 
 		} else {
                     url=base+"adminhome"+ext;
                 }
