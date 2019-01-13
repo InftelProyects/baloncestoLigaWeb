@@ -68,14 +68,14 @@
                             <th>Nombre</th>
                             <th>Equipo</th>
                             <th>Dorsal</th>
-                            <th>Partidos</th>
+                            
                         </tr>
                          <c:forEach var="jugador" items="${jugadores}">
                         <tr>
                           <td>${jugador.persona.apellidos}, ${jugador.persona.nombre}</td>
                           <td>${jugador.equipoIdEquipo.nombre}</td>
                           <td>${jugador.dorsal}</td>
-                          <td></td>
+                    
                         </tr>
                         </c:forEach>
                     </table>

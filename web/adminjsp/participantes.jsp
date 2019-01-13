@@ -51,7 +51,6 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Provincia</th>
-                            <th>Partidos</th>
                             <th>ID</th>
                         </tr>
                        <c:forEach var="arbitro" items="${arbitros}">
@@ -78,7 +77,6 @@
                           <td>${jugador.equipoIdEquipo.nombre}</td>
                           <td>${jugador.dorsal}</td>
                           <td>${jugador.idPersona}</td>
-                          <td></td>
                         </tr>
                         </c:forEach>
                     </table>
