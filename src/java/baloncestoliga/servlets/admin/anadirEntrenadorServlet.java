@@ -5,12 +5,8 @@
  */
 package baloncestoliga.servlets.admin;
 
-
-
-
-import baloncestoliga.model.Usuario;
-import baloncestoliga.model.facade.UsuarioFacade;
-import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
+import baloncestoliga.model.Entrenador;
+import baloncestoliga.model.facade.EntrenadorFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -23,17 +19,16 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author josep
+ * @author beatrizillanesalcaide
  */
-@WebServlet(name = "EliminarUsuario", urlPatterns = {"/EliminarUsuario"})
-public class EliminarUsuario extends HttpServlet {
+@WebServlet(name = "anadirEntrenadorServlet", urlPatterns = {"/anadirEntrenadorServlet"})
+public class anadirEntrenadorServlet extends HttpServlet {
 
     @EJB
-    private UsuarioFacade usuarioFacade;
+    private EntrenadorFacade entrenadorFacade;
 
-
-   
-
+    
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -45,23 +40,40 @@ public class EliminarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
-            String id;
+        
+        //Sacar los datos del formulario
+        
+        String id_entrenador;
              
-            id = request.getParameter("id");
-            int id2 = Integer.parseInt(id);
+            id_entrenador= request.getParameter("id");
+            int id2 = Integer.parseInt(id_entrenador);
             BigDecimal id4=new BigDecimal(id2);
-            Usuario a = usuarioFacade.find(id4);
-            if(a!= null){
-                usuarioFacade.remove(a);
-                request.setAttribute("info", "¡Usuario eliminado!");
-            }
-            else{
-                request.setAttribute("info", "El usuario no existe");
-            }
-            request.getRequestDispatcher("/adminjsp/EliminarUsuario.jsp").forward(request, response);
+     
+        String nivel = request.getParameter("nivel");
+      
+       
+        if(request.getParameter("nivel").isEmpty() || request.getParameter("id").isEmpty()){
+            
+            if(!request.getParameter("nivel").isEmpty())
+                request.getSession().setAttribute("nivel", request.getParameter("nivel"));
+            if(!request.getParameter("id").isEmpty())
+                request.getSession().setAttribute("id", request.getParameter("id"));
+            
+            request.setAttribute("error", "Debe rellenar todos los campos");
+            request.getRequestDispatcher("AnadirEntrenadorJSP.jsp").forward(request, response); //Crear pagina error de login
+        
         }
-    
+        else{
+            
+        Entrenador e = entrenadorFacade.find(id4);
+            if(e == null){
+                entrenadorFacade.create(e);
+                request.setAttribute("info", "¡Entrenador Añadido!");
+                request.getRequestDispatcher("/adminjsp/AnadirEntrenadorJSP.jsp").forward(request, response);
+            }    
+        }   
+        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
