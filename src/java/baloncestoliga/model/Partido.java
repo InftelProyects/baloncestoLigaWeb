@@ -85,12 +85,15 @@ public class Partido implements Serializable {
         this.idPartido = idPartido;
     }
 
-    public Partido(BigDecimal idPartido, String fecha, String localizacion, String resultado, String jornada) {
+    public Partido(BigDecimal idPartido, String fecha, String localizacion, String resultado, String jornada, Equipo equipoIdEquipo, Equipo equipoIdEquipo1) {
         this.idPartido = idPartido;
         this.fecha = fecha;
         this.localizacion = localizacion;
         this.resultado = resultado;
         this.jornada = jornada;
+        this.equipoIdEquipo = equipoIdEquipo;
+        this.equipoIdEquipo1 = equipoIdEquipo1;
+        
     }
 
     public BigDecimal getIdPartido() {
