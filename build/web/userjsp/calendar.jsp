@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,12 +27,12 @@
                     <table>
                         <tr>
                           <th>Fecha</th>
-                          <th>Hora</th>
+               
                           <th>Lugar</th>
                           <th>Jornada</th>
                           <th>Equipo</th>
                           <th>vs Equipo</th>
-                          <th>Resultados</th>
+                         
                         </tr>
                         <jsp:include page="${userol}calendar.jsp" flush="true" />
                         </table>

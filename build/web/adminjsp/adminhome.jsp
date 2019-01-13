@@ -22,7 +22,9 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Bienvenido Administrador</h2>
-
+                    <div style="text-align: center; margin: 0px 0 8px 0;">
+                                <img src="imgs/administrador.png" alt="Avatar" style="border-radius: 50%;width: 40%">
+                        </div>
                 </div>
                 <jsp:include page="/jsp/footer.jsp" flush="true" />
             </div>

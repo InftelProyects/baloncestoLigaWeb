@@ -23,7 +23,7 @@
                 <div id="banner"></div>
                 <div id="content">
                     <h2>Administración de Equipos</h2>
-                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirEquipo'" type="button" >Añadir equipo</button>
+                    <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=AnadirEquipoJSP'" type="button" >Añadir equipo</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=EliminarEquipo'" type="button" >Eliminar equipo</button>
                     <button onclick="location.href='/baloncestoLigaWeb/adminController?adminlist=ModificarEquipoJSP'" type="button" >Modificar equipo</button>
                     

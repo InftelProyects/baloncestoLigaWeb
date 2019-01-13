@@ -27,20 +27,12 @@
                     <span style="font-weight: bold;font-size: medium">Navega por tu sesión</span>
                     <br>
                     <br>
-                    <span style="font-size: small">Formas parte de nuestro grupo de BalonLiga. Aprovecha todas nuestras opciones para ti: </span>
+                    <span style="font-size: small">Formas parte de nuestro grupo de BalonLiga. Aprovecha todas nuestras opciones para ti. </span>
                     <br>
                     <br>
-                    <ul>
-                        <li><h3>Ve tu Perfil</h3>
-                        <img src="imgs/otro.jpg" height="120" width="200" alt="" /> </li>
-                    
-                        <li><h3>Atento a tu Calendario</h3><img src="imgs/otro.jpg" height="120" width="200" alt="" /></li>
-                        
-                        <li><h3>Observa a tu Equipo</h3><img src="imgs/otro.jpg" height="120" width="200" alt="" /></li>
-                        
-                        <li><h3>Repasa tus partidos</h3><img src="imgs/otro.jpg" height="120" width="200" alt="" /></li>
-                         
-                    </ul>
+                     <div style="text-align: center; margin: 0px 0 8px 0;">
+                   <img src=${imagen} alt="Avatar" style="border-radius: 50%;width: 40%">
+                        </div>
                 </div>
                 <jsp:include page="/jsp/footer.jsp" flush="true" />
             </div>

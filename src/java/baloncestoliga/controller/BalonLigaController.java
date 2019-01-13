@@ -6,6 +6,7 @@
 package baloncestoliga.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,6 +35,8 @@ public class BalonLigaController extends HttpServlet {
                     String ext="servlet";
                      url=base+list+ext;
                 }
+                Date hoy=new Date();
+                request.setAttribute("hoy", hoy);
                 
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(url);
 		requestDispatcher.forward(request, response);
