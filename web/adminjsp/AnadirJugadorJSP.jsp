@@ -33,7 +33,7 @@
                 <p><span>Dorsal</span><input type="text" name="dorsal" required/></p>
                 <p><span>Altura (cm)</span><input type="text" name="altura" required/></p>
                 <p><span>Peso (kg)</span><input type="text" name="peso" required/></p>
-                
+                <p><span>Identificador Equipo</span><input type="text" name="idequipo" required/></p>
                <%-- <p><span>Identificador Partido</span><input type="text" name="id_partido" required/></p> --%>
                 <button type="submit">Añadir</button>
  
