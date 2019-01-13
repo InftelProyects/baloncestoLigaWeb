@@ -6,6 +6,7 @@
 package baloncestoliga.model.facade;
 
 import baloncestoliga.model.Equipo;
+import java.math.BigDecimal;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -43,5 +44,14 @@ public class EquipoFacade extends AbstractFacade<Equipo> {
         }
         return nombre;
     }
+   
+   public void UpdateEquipo(String nombre,String categoria){
+         
+      em.createQuery( "UPDATE EQUIPO E SET E.CATEGORIA=?1 WHERE E.NOMBRE = ?2")
+              .setParameter(1, nombre)
+              .setParameter(2,categoria)
+              .executeUpdate();
+     }
+   
     
 }
