@@ -29,6 +29,9 @@ import javax.servlet.http.HttpServletResponse;
 public class ActualizarUsuario extends HttpServlet {
 
     @EJB
+    private PersonaFacade personaFacade;
+
+    @EJB
     private UsuarioFacade usuarioFacade;
     
 
@@ -61,7 +64,8 @@ public class ActualizarUsuario extends HttpServlet {
                 u.setPassword(request.getParameter("password"));
                 u.setEmail(request.getParameter("email"));
                 u.setRol(c);
-                //u.setPersonaIdPersona(id42);
+                Persona persona=personaFacade.find(id42);
+                u.setPersonaIdPersona(persona);
                 usuarioFacade.edit(u);
             request.setAttribute("info", "¡usuario actualizado!");
             }
