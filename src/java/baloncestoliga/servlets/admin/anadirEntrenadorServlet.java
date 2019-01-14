@@ -6,7 +6,10 @@
 package baloncestoliga.servlets.admin;
 
 import baloncestoliga.model.Entrenador;
+import baloncestoliga.model.Persona;
 import baloncestoliga.model.facade.EntrenadorFacade;
+
+import baloncestoliga.model.facade.PersonaFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -23,6 +26,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "anadirEntrenadorServlet", urlPatterns = {"/anadirEntrenadorServlet"})
 public class anadirEntrenadorServlet extends HttpServlet {
+
+    @EJB
+    private PersonaFacade personaFacade;
+
+    
 
     @EJB
     private EntrenadorFacade entrenadorFacade;
@@ -52,7 +60,7 @@ public class anadirEntrenadorServlet extends HttpServlet {
         String nivel = request.getParameter("nivel");
       
        
-        if(request.getParameter("nivel").isEmpty() || request.getParameter("id").isEmpty()){
+       /* if(request.getParameter("nivel").isEmpty() || request.getParameter("id").isEmpty()){
             
             if(!request.getParameter("nivel").isEmpty())
                 request.getSession().setAttribute("nivel", request.getParameter("nivel"));
@@ -64,16 +72,20 @@ public class anadirEntrenadorServlet extends HttpServlet {
         
         }
         else{
-            
-        Entrenador e = entrenadorFacade.find(id4);
-            if(e == null){
-                entrenadorFacade.create(e);
-                request.setAttribute("info", "¡Entrenador Añadido!");
-                request.getRequestDispatcher("/adminjsp/AnadirEntrenadorJSP.jsp").forward(request, response);
-            }    
+        */    
+        if(personaFacade.find(id4) !=null){
+                Entrenador b = new Entrenador(id4,nivel);
+                entrenadorFacade.create(b);
+                request.setAttribute("info", "¡Entrenador creado!");    
+           
+                
+            } else{
+            request.setAttribute("info", "¡Persona no existe!");    
+            }
+            request.getRequestDispatcher("/adminjsp/AnadirArbitroJSP.jsp").forward(request, response);
         }   
         
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
