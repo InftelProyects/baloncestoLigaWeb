@@ -5,12 +5,15 @@
  */
 package baloncestoliga.servlets.admin;
 
+import baloncestoliga.model.Equipo;
 import baloncestoliga.model.Jugador;
-import baloncestoliga.model.Usuario;
-import baloncestoliga.model.facade.UsuarioFacade;
+import baloncestoliga.model.Persona;
+import baloncestoliga.model.facade.JugadorFacade;
+import baloncestoliga.model.facade.PersonaFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,14 +23,15 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author beatrizillanesalcaide
+ * @author mohammed
  */
-@WebServlet(name = "anadirUsuarioServlet", urlPatterns = {"/anadirUsuarioServlet"})
-public class anadirUsuarioServlet extends HttpServlet {
+
+@WebServlet(name = "ActualizarJugador", urlPatterns = {"/ActualizarJugador"})
+public class ActualizarJugador extends HttpServlet {
 
     @EJB
-    private UsuarioFacade usuarioFacade;
-
+    private JugadorFacade jugadorFacade;
+   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,40 +43,51 @@ public class anadirUsuarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        //Sacar los datos del formulario
-        
-        String id;
-             
-            id = request.getParameter("id_usuario");
-            int id2 = Integer.parseInt(id);
-            BigDecimal id4=new BigDecimal(id2);
-            
-        String idp;
-             
-            idp = request.getParameter("id_persona");
-            int id3 = Integer.parseInt(idp);
-            BigDecimal id5 = new BigDecimal(id3); 
-            
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String rol=request.getParameter("rol");
-         char c = rol.charAt(0);
-       
-            if(usuarioFacade.find(id4) !=null){
-                Usuario b = new Usuario(id4,username,password,email,c);
-                usuarioFacade.create(b);
-                request.setAttribute("info", "¡Usuario creado!");    
-           
-                
-            } else{
-            request.setAttribute("info", "¡Persona no existe!");    
-            }
-            request.getRequestDispatcher("/adminjsp/AnadirUsuarioJSP.jsp").forward(request, response);
-        //}              
-        
     
+         String id = request.getParameter("id");
+         int id2 = Integer.parseInt(id);
+         BigDecimal id4=new BigDecimal(id2);
+         
+         String dorsal;
+             
+            dorsal = request.getParameter("dorsal");
+            int id3 = Integer.parseInt(dorsal); 
+            //BigInteger id7 = new BigInteger(id3);
+            BigInteger bi = BigInteger.valueOf(id3);
+            
+        String altura;
+             
+            altura = request.getParameter("altura");
+            int id5 = Integer.parseInt(altura);  
+            BigInteger bi2 = BigInteger.valueOf(id5);
+            
+        String peso;
+             
+            peso = request.getParameter("peso");
+            int id6 = Integer.parseInt(peso); 
+            BigInteger bi3 = BigInteger.valueOf(id6);
+            
+        String idequipo;
+             
+            idequipo = request.getParameter("id_equipo");
+            int id10 = Integer.parseInt(idequipo);
+            BigDecimal id9 = new BigDecimal(id10);
+          
+            Jugador j = jugadorFacade.find(id4);
+            if (jugadorFacade.find(id4) != null){
+                j.setAltura(bi2);
+                j.setPeso(bi3);
+                j.setDorsal(bi);
+             // j.setEquipoIdEquipo(id9);
+                jugadorFacade.edit(j);
+            request.setAttribute("info", "¡Jugador actualizado!");
+            }
+            else
+            {
+                request.setAttribute("info", "¡Persona o equipo no existe!");
+            }
+            request.getRequestDispatcher("/adminjsp/ModificarJugador.jsp").forward(request, response);
+  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
