@@ -82,7 +82,7 @@ public class anadirEntrenadorServlet extends HttpServlet {
             } else{
             request.setAttribute("info", "¡Persona no existe!");    
             }
-            request.getRequestDispatcher("/adminjsp/AnadirArbitroJSP.jsp").forward(request, response);
+            request.getRequestDispatcher("/adminjsp/AnadirEntrenadorJSP.jsp").forward(request, response);
         }   
         
     

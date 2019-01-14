@@ -39,8 +39,8 @@ public class Entrenador implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq2")
-    @SequenceGenerator (name = "seq2", sequenceName = "ENTRENADOR_SEQ",initialValue = 3, allocationSize = 1)
+   // @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq2")
+    //@SequenceGenerator (name = "seq2", sequenceName = "ENTRENADOR_SEQ",initialValue = 3, allocationSize = 1)
     @Id
     @Basic(optional = false)
     @NotNull
