@@ -80,8 +80,8 @@ public class anadirPartidoServlet extends HttpServlet {
            */
             //Arbitro a = arbitroFacade.find(id4);
             if(partidoFacade.find(id4) !=null){
-                Partido b = new Partido(id4,fecha,localizacion,resultado,jornada,equipoIdEquipo,equipoIdEquipo1);
-                partidoFacade.create(b);
+                //Partido b = new Partido(id4,fecha,localizacion,resultado,jornada,equipoIdEquipo,equipoIdEquipo1);
+               // partidoFacade.create(b);
                 request.setAttribute("info", "¡Arbitro creado!");    
            
                 

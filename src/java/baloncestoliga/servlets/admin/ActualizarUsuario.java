@@ -48,6 +48,9 @@ public class ActualizarUsuario extends HttpServlet {
          int id2 = Integer.parseInt(id);
          BigDecimal id4=new BigDecimal(id2);
          
+         String id3 = request.getParameter("idPersona");
+         int id22 = Integer.parseInt(id3);
+         BigDecimal id42=new BigDecimal(id22);
          
          String rol=request.getParameter("rol");
          char c = rol.charAt(0);
@@ -58,7 +61,7 @@ public class ActualizarUsuario extends HttpServlet {
                 u.setPassword(request.getParameter("password"));
                 u.setEmail(request.getParameter("email"));
                 u.setRol(c);
-                //u.setPersonaIdPersona(request.getParameter("idPersona"));
+                //u.setPersonaIdPersona(id42);
                 usuarioFacade.edit(u);
             request.setAttribute("info", "¡usuario actualizado!");
             }
